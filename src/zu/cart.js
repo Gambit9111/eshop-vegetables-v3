@@ -5,7 +5,7 @@ const initialState = {
   items: Cookies.get('cart') ? JSON.parse(Cookies.get('cart')) : [],
 };
 
-export const useCart = create((set, get) => ({
+const useCart = create((set, get) => ({
   ...initialState,
   addItem: item => {
     set(state => ({ items: [...state.items, item] }));
@@ -33,3 +33,5 @@ export const useCart = create((set, get) => ({
     Cookies.set('cart', JSON.stringify(get().items));
   },
 }));
+
+export default useCart;

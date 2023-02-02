@@ -1,15 +1,12 @@
-import { useCart } from "@/zu/cart";
+import useCart from "@/zu/cart";
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import plus from "../../../public/icons/plus.svg";
-import minus from "../../../public/icons/minus.svg";
+
+import AmountControls from "./AmountControls";
 
 const Product = ({ id, image, name, quantity, price }) => {
   const { items, addItem, removeItem } = useCart();
   const item = items.find((item) => item.id === id);
   const [amount, setAmount] = useState(item ? item.amount : 1);
-
-  console.log(items);
 
   const handleAmountChange = (operation) => {
     if (operation === "plus") {
@@ -36,15 +33,10 @@ const Product = ({ id, image, name, quantity, price }) => {
       {item ? (
         <p className="text-xl">{amount}</p>
       ) : (
-        <div className="flex gap-2">
-          <button onClick={() => handleAmountChange("minus")}>
-            <Image src={minus} alt="minus" />
-          </button>
-          <p className="text-xl">{amount}</p>
-          <button onClick={() => handleAmountChange("plus")}>
-            <Image src={plus} alt="plus" />
-          </button>
-        </div>
+        <AmountControls
+          handleAmountChange={handleAmountChange}
+          amount={amount}
+        />
       )}
       {item ? (
         <button className="bg-red-600" onClick={() => removeItem(id)}>
