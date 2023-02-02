@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String
+  slug     String    @unique
+  products Product[]
+}
+
+model Product {
+  id           Int      @id @default(autoincrement())
+  name         String
+  slug         String   @unique
+  description  String?
+  quantity     String
+  price        Float
+  image        String
+  available    Boolean  @default(true)
+  category     Category @relation(fields: [categorySlug], references: [slug])
+  categorySlug String
+}
+
+model Order {
+  id                     Int           @id @default(autoincrement())
+  createdAt              DateTime      @default(now())
+  status                 Status        @default(PENDING)
+  orderNumber            String        @unique
+  total                  Float
+  items                  Json
+  shippingDetailsName    String
+  shippingDetailsEmail   String
+  shippingDetailsPhone   String
+  shippingDetailsCity    String
+  shippingDetailsAddress String
+  shippingDetailsInfo    String
+  paymentOption          PaymentOption @default(CASH)
+}
+
+enum Status {
+  PENDING
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentOption {
+  CASH
+  CARD
+  CRYPTO
+}
