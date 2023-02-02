@@ -11,7 +11,6 @@ const BurgerMenu = ({ burgerMenuOpen, setBurgerMenuOpen }) => {
         src={menuIcon}
         alt="menu icon"
         onClick={() => setBurgerMenuOpen(true)}
-        className="w-8"
       />
       {/* side navigation menu */}
       {burgerMenuOpen && (
@@ -20,7 +19,7 @@ const BurgerMenu = ({ burgerMenuOpen, setBurgerMenuOpen }) => {
             src={closeIcon}
             alt="close icon"
             onClick={() => setBurgerMenuOpen(false)}
-            className="w-8"
+            className="h-auto w-8"
           />
         </div>
       )}

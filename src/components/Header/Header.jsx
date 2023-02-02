@@ -16,12 +16,14 @@ const Header = ({
   const [cartMenuOpen, setCartMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-10 flex h-20 w-full items-center justify-center bg-gray-400 text-white">
-      <BurgerMenu
-        burgerMenuOpen={burgerMenuOpen}
-        setBurgerMenuOpen={setBurgerMenuOpen}
-      />
-      Header
+    <header className="fixed top-0 z-10 flex h-20 w-full items-center justify-between bg-myWhite px-3 text-myBlack">
+      <div className="flex gap-3">
+        <BurgerMenu
+          burgerMenuOpen={burgerMenuOpen}
+          setBurgerMenuOpen={setBurgerMenuOpen}
+        />
+        <h1 className="font-Cinzel text-3xl font-bold">Logo</h1>
+      </div>
       <CartMenu
         cartMenuOpen={cartMenuOpen}
         setCartMenuOpen={setCartMenuOpen}
