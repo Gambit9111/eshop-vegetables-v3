@@ -44,17 +44,25 @@ export default function Home() {
 const Section1HomeDelivery = () => {
   return (
     <section className="h-full text-myBlack">
-      <div className="relative p-3">
-        <Image src={truck} alt={truck} className="absolute top-16 right-3" />
-        <Image src={house} alt={house} className="absolute bottom-4 left-3" />
-        <h1 className="mr-24 text-left font-Cinzel text-3xl font-bold">
-          Šviežios daržovės ir vaisiai
-        </h1>
-        <h1 className="ml-24 text-right font-Cinzel text-3xl font-bold">
-          tiesiai į jūsų namus!
-        </h1>
+      <div className="p-3">
+        <span className="relative">
+          <Image src={house} alt={house} className="absolute bottom-[-4rem]" />
+          <h1 className="mr-32 text-left font-Cinzel text-3xl font-bold">
+            Šviežios daržovės ir vaisiai
+          </h1>
+        </span>
+        <span className="relative">
+          <Image
+            src={truck}
+            alt={truck}
+            className="absolute top-[-3.5rem] right-0"
+          />
+          <h1 className="ml-24 text-right font-Cinzel text-3xl font-bold">
+            tiesiai į jūsų namus!
+          </h1>
+        </span>
       </div>
-      <p className="px-8 pt-3 pb-6 text-center font-Poppins text-2xl font-light">
+      <p className="px-12 pt-3 pb-6 text-center font-Poppins text-2xl font-light">
         Pristatysime mūsų ekologiškas daržoves ir vaisius tiesiai jums į namus!
       </p>
     </section>
@@ -67,7 +75,7 @@ const Section2Stories = () => {
       <h1 className="pt-3 text-center font-Cinzel text-xl font-bold">
         Tik ekologiškos prekės
       </h1>
-      <p className="px-8 pt-3 text-center font-Poppins text-2xl font-light">
+      <p className="px-6 pt-3 text-center font-Poppins text-2xl font-light">
         Visos mūsų parduodamos daržovės bei vaisiai yra{" "}
         <span className="font-medium">100% organiški</span> ir ekologišku
         tiesiai iš ūkininkų daržų bei sodų.
@@ -138,7 +146,7 @@ const Section3Discount = () => {
         quality={100}
         placeholder="blur"
         priority
-        className="object-cover"
+        className="w-full object-cover"
         blurDataURL="/pictures/sutaupyk.webp"
       />
     </section>
