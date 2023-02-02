@@ -14,6 +14,7 @@ const CartMenu = ({
 }) => {
   // we have to create a state for cartLenght, because we can't use items.length directly in the cart icon
   const [cartLenght, setCartLenght] = useState(0);
+
   // whenever number of items in cart changes, rerender component
   useEffect(() => {
     setCartLenght(items.length);
@@ -21,6 +22,7 @@ const CartMenu = ({
 
   return (
     <>
+      {/* cart icon displaying how many items we have in the cart, opens the cart panel on click */}
       <span className="relative">
         <Image
           src={cartIcon}
@@ -28,12 +30,15 @@ const CartMenu = ({
           onClick={() => setCartMenuOpen(true)}
           className="w-8"
         />
+        {/* only displays cart bubble if we have any items */}
         {cartLenght > 0 && (
           <div className=" absolute top-[-0.3rem] right-[-0.3rem] flex h-5 w-5 items-center justify-center rounded-full bg-myGreen text-sm">
             {cartLenght}
           </div>
         )}
       </span>
+
+      {/* cart menu */}
       {cartMenuOpen && (
         <div className="fixed top-0 left-0 z-10 h-screen w-full bg-myYellow">
           <Image

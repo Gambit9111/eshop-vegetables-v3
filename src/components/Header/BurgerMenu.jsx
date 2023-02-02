@@ -6,12 +6,14 @@ import closeIcon from "../../../public/icons/close.svg";
 const BurgerMenu = ({ burgerMenuOpen, setBurgerMenuOpen }) => {
   return (
     <>
+      {/* burger menu icon on click opens the side navigation menu */}
       <Image
         src={menuIcon}
         alt="menu icon"
         onClick={() => setBurgerMenuOpen(true)}
         className="w-8"
       />
+      {/* side navigation menu */}
       {burgerMenuOpen && (
         <div className="fixed top-0 left-0 z-10 h-screen w-full bg-myYellow">
           <Image

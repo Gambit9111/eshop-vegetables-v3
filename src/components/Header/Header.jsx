@@ -11,6 +11,7 @@ const Header = ({
   getTotal,
   updateItem,
 }) => {
+  // states for toggling burger and cart menu
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const [cartMenuOpen, setCartMenuOpen] = useState(false);
 

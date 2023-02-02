@@ -1,12 +1,14 @@
 import { useState } from "react";
 
 const Menu = ({ products, setFilteredProducts, setCurrentPage, setSearch }) => {
-  const [activeButton, setActiveButton] = useState("vaisiai-ir-uogos");
+  const [activeButton, setActiveButton] = useState("vaisiai-ir-uogos"); // active button state
 
   const filterProducts = (category) => {
+    // sets filteredProducts state to products that match the category
     setFilteredProducts(
       products.filter((product) => product.categorySlug === category)
     );
+    // cleans up the search state and sets current page to 1
     setCurrentPage(1);
     setSearch("");
   };

@@ -9,10 +9,12 @@ const CartItem = ({
   removeItem,
   updateItem,
 }) => {
+  // changes the amount of item in cart
   const handleAmountChange = (operation) => {
     if (operation === "plus") {
       updateItem(id, { amount: amount + 1 });
     } else if (operation === "minus") {
+      // in case we have only one item, remove it from cart
       if (amount > 1) {
         updateItem(id, { amount: amount - 1 });
       } else {

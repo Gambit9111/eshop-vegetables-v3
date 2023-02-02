@@ -1,3 +1,4 @@
+// Reusing this component in Product and CartItem components
 import Image from "next/image";
 import plus from "../../../public/icons/plus.svg";
 import minus from "../../../public/icons/minus.svg";

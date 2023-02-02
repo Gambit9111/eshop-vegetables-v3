@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import useCart from "@/zu/cart";
 
 const Layout = ({ children }) => {
+  // we pass this hook to all components that need at the top of the layout
   const { items, addItem, removeItem, clearCart, getTotal, updateItem } =
     useCart();
 
