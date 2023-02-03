@@ -35,15 +35,17 @@ const CartMenu = ({
 
       {/* cart menu */}
       {cartMenuOpen && (
-        <div className="fixed top-0 left-0 z-10 h-screen w-full bg-myYellow">
-          <Image
-            src={closeIcon}
-            alt="close icon"
-            onClick={() => setCartMenuOpen(false)}
-            className="w-8"
-          />
-          <h1 className="text-center">Cart</h1>
-          <div>
+        <div className="fixed top-0 left-0 z-10 h-screen w-full bg-myWhite text-myBlack">
+          <div className="w-full h-20 flex items-center justify-center">
+            <Image
+              src={closeIcon}
+              alt="close icon"
+              onClick={() => setCartMenuOpen(false)}
+              className="absolute top-7 right-7"
+            />
+            <h1 className="font-Cinzel text-3xl font-bold">Karutis</h1>
+          </div>
+          <div className="flex flex-col gap-3 px-3 font-Poppins">
             {/* map over items */}
             {items.map((item) => (
               <CartItem

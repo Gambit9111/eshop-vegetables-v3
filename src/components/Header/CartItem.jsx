@@ -24,25 +24,26 @@ const CartItem = ({
   };
 
   return (
-    <div className="flex h-32 w-full justify-between bg-white p-2 px-6 text-black">
-      <div>
-        <p>{id}</p>
-        <p>{name}</p>
-        <p>{quantity}</p>
-      </div>
-      <p>{(price * amount).toFixed(2)}€</p>
-      <div>
-        <p>{amount}</p>
-        <button onClick={() => removeItem(id)} className="bg-blue-300 text-xs">
-          remove
-        </button>
+    <div className="flex justify-between w-full h-full">
+      <div className="flex flex-col items-start justify-between">
+        <h1 className="text-lg leading-snug w-full">{name}</h1>
         <AmountControls
           handleAmountChange={handleAmountChange}
           amount={amount}
         />
       </div>
+      <div className="flex flex-col text-right">
+        <h1 className="text-myBlack/80 text-sm">{quantity}</h1>
+        <h1 className="text-lg pt-1">{(price * amount).toFixed(2)}€</h1>
+        <button className="h-[32px] w-24 rounded border border-myBlack bg-myGreen text-myWhite mt-4" onClick={() => removeItem(id)}>
+          Pašalinti
+        </button>
+      </div>
+
     </div>
   );
 };
 
 export default CartItem;
+
+

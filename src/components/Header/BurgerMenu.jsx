@@ -14,7 +14,7 @@ const BurgerMenu = ({ burgerMenuOpen, setBurgerMenuOpen }) => {
       />
       {/* side navigation menu */}
       {burgerMenuOpen && (
-        <div className="fixed top-0 left-0 z-10 h-screen w-full bg-myYellow">
+        <div className="fixed top-0 left-0 z-10 h-screen w-full bg-myWhite">
           <Image
             src={closeIcon}
             alt="close icon"
