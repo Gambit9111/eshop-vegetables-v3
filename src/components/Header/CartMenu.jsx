@@ -24,10 +24,10 @@ const CartMenu = ({
     <>
       {/* cart icon displaying how many items we have in the cart, opens the cart panel on click */}
       <span onClick={() => setCartMenuOpen(true)} className="relative mr-3">
-        <Image src={cartIcon} alt="menu icon" />
+        <Image src={cartIcon} alt="menu icon" className="xl:w-7" />
         {/* only displays cart bubble if we have any items */}
         {cartLenght > 0 && (
-          <div className=" absolute top-[-0.7rem] right-[-0.8rem] flex h-5 w-7 items-center justify-center rounded-full bg-myGreen font-Poppins text-sm font-medium text-myWhite">
+          <div className=" absolute top-[-0.7rem] right-[-0.8rem] flex h-5 w-7 items-center justify-center rounded-full bg-myGreen font-Poppins text-sm font-medium text-myWhite xl:top-[-0.5rem]">
             {cartLenght}
           </div>
         )}

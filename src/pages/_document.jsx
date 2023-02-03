@@ -9,7 +9,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body className="scrollbar-thin scrollbar-track-transparent scrollbar-thumb-myGreen">
         <Main />
         <NextScript />
       </body>

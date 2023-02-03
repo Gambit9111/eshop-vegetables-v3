@@ -23,9 +23,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex h-full flex-col">
+      <main className="flex h-full flex-col xl:relative">
         <Image
-          className="mx-auto mt-20 h-[40vh] object-cover"
+          className="mx-auto mt-20 h-[40vh] object-cover xl:h-[90vh] xl:w-full"
           src={bg}
           alt={bg}
           priority
@@ -43,11 +43,15 @@ export default function Home() {
 
 const Section1HomeDelivery = () => {
   return (
-    <section className="h-full text-myBlack">
+    <section className="flex h-full flex-col items-center pb-6 text-myBlack xl:absolute xl:top-[10%] xl:z-10 xl:h-[25rem] xl:w-[60rem] xl:justify-between xl:bg-myWhite/80">
       <div className="p-3">
         <span className="relative">
-          <Image src={house} alt={house} className="absolute bottom-[-4rem]" />
-          <h1 className="mr-32 text-left font-Cinzel text-3xl font-bold">
+          <Image
+            src={house}
+            alt={house}
+            className="absolute bottom-[-4rem] xl:top-32 xl:left-[-4rem] xl:w-24"
+          />
+          <h1 className="mr-32 text-left font-Cinzel text-3xl font-bold xl:pb-3 xl:pt-6 xl:text-4xl">
             Šviežios daržovės ir vaisiai
           </h1>
         </span>
@@ -55,47 +59,57 @@ const Section1HomeDelivery = () => {
           <Image
             src={truck}
             alt={truck}
-            className="absolute top-[-3.5rem] right-0"
+            className="absolute top-[-3.5rem] right-0 xl:top-24 xl:right-[-4rem] xl:w-24"
           />
-          <h1 className="ml-24 text-right font-Cinzel text-3xl font-bold">
+          <h1 className="ml-24 text-right font-Cinzel text-3xl font-bold xl:text-4xl">
             tiesiai į jūsų namus!
           </h1>
         </span>
       </div>
-      <p className="px-12 pt-3 pb-6 text-center font-Poppins text-2xl font-light">
+      <p className="px-12 pt-3 pb-6 text-center font-Poppins text-2xl font-light xl:w-1/2 xl:px-0 xl:text-3xl">
         Pristatysime mūsų ekologiškas daržoves ir vaisius tiesiai jums į namus!
       </p>
+      <button className="w-48 rounded bg-myGreen py-3 font-Cinzel text-xl font-bold text-myWhite drop-shadow-2xl">
+        Apsipirkti !
+      </button>
     </section>
   );
 };
 
 const Section2Stories = () => {
   return (
-    <section className="h-full bg-mySkin text-myBlack">
-      <h1 className="pt-3 text-center font-Cinzel text-xl font-bold">
+    <section className="h-full bg-mySkin text-myBlack xl:px-96">
+      <h1 className="pt-3 text-center font-Cinzel text-xl font-bold xl:pt-6 xl:text-2xl">
         Tik ekologiškos prekės
       </h1>
-      <p className="px-6 pt-3 text-center font-Poppins text-2xl font-light">
+      <p className="px-6 pt-3 text-center font-Poppins text-2xl font-light xl:pt-9 xl:text-3xl">
         Visos mūsų parduodamos daržovės bei vaisiai yra{" "}
         <span className="font-medium">100% organiški</span> ir ekologišku
         tiesiai iš ūkininkų daržų bei sodų.
       </p>
-      <p className="pt-6 text-center font-Poppins font-light underline">
+      <p className="pt-6 text-center font-Poppins font-light underline xl:pt-9 xl:text-lg">
         ūkininkų istorijos ir pasakojimai
       </p>
 
-      <div className="mt-8 mb-6 space-y-3 px-3">
+      <div className="mt-8 mb-6 space-y-3 px-3 xl:mt-12 xl:mb-9 xl:space-y-5">
         <div className="flex items-center justify-between">
           <span className="flex flex-col items-center">
             <Image
               src={jonas}
               alt={jonas}
               quality={100}
-              className="h-auto w-32 rounded-[35px]"
+              className="h-auto w-32 rounded-[35px] xl:w-48"
             />
-            <h3 className="font-Poppins text-sm font-light">Jonas</h3>
+            <h3 className="font-Poppins text-sm font-light xl:text-base">
+              Jonas
+            </h3>
           </span>
-          <Image src={windmill} alt={windmill} quality={100} />
+          <Image
+            src={windmill}
+            alt={windmill}
+            quality={100}
+            className="xl:w-48"
+          />
         </div>
 
         <span className="flex flex-col items-center">
@@ -103,21 +117,28 @@ const Section2Stories = () => {
             src={urte}
             alt={urte}
             quality={100}
-            className="h-auto w-32 rounded-[35px]"
+            className="h-auto w-32 rounded-[35px] xl:w-48"
           />
-          <h3 className="font-Poppins text-sm font-light">Urtė</h3>
+          <h3 className="font-Poppins text-sm font-light xl:text-base">Urtė</h3>
         </span>
 
         <div className="flex items-center justify-between">
-          <Image src={tractor} alt={tractor} quality={100} />
+          <Image
+            src={tractor}
+            alt={tractor}
+            quality={100}
+            className="xl:w-48"
+          />
           <span className="flex flex-col items-center">
             <Image
               src={anatolijus}
               alt={anatolijus}
               quality={100}
-              className="h-auto w-32 rounded-[35px]"
+              className="h-auto w-32 rounded-[35px] xl:w-48"
             />
-            <h3 className="font-Poppins text-sm font-light">Anatolijus</h3>
+            <h3 className="font-Poppins text-sm font-light xl:text-base">
+              Anatolijus
+            </h3>
           </span>
         </div>
       </div>
@@ -127,26 +148,28 @@ const Section2Stories = () => {
 
 const Section3Discount = () => {
   return (
-    <section className="h-full text-myBlack">
-      <h1 className="px-6 pt-3 text-center font-Cinzel text-xl font-bold">
-        Pradėk 2023-uosius su vitaminu pliūpsniu.
-      </h1>
-      <span className="mx-14 mt-6 flex flex-col items-center">
-        <button className="rounded bg-myGreen px-10 py-3 font-Cinzel text-xl font-bold text-myWhite drop-shadow-2xl">
-          Kodas First20
-        </button>
-        <p className="mb-6 text-center font-Poppins text-[0.5rem] font-light">
-          *Akcijos sąlygos gali keistis bet kuriuo metu ir mes neprivalome
-          aiškintis.
-        </p>
-      </span>
+    <section className="h-full text-myBlack xl:flex xl:justify-between">
+      <div className="xl:flex xl:w-2/3 xl:flex-col xl:items-center xl:justify-center">
+        <h1 className="px-6 pt-3 text-center font-Cinzel text-xl font-bold xl:pt-6 xl:text-2xl">
+          Pradėk 2023-uosius su vitaminu pliūpsniu.
+        </h1>
+        <span className="mx-14 mt-6 flex flex-col items-center xl:mt-9">
+          <button className="w-48 rounded bg-myGreen py-3 font-Cinzel text-xl font-bold text-myWhite drop-shadow-2xl">
+            Kodas First20
+          </button>
+          <p className="mb-6 text-center font-Poppins text-[0.5rem] font-light xl:mb-9">
+            *Akcijos sąlygos gali keistis bet kuriuo metu ir mes neprivalome
+            aiškintis.
+          </p>
+        </span>
+      </div>
       <Image
         src={sutaupyk}
         alt={sutaupyk}
         quality={100}
         placeholder="blur"
         priority
-        className="w-full object-cover"
+        className="w-full object-cover xl:w-[40%]"
         blurDataURL="/pictures/sutaupyk.webp"
       />
     </section>
