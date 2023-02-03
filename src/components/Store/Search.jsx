@@ -20,13 +20,13 @@ const Search = ({
   };
 
   return (
-    <label className="relative mb-3 block px-1 xl:mx-auto xl:mt-8 xl:w-[39.5rem]">
+    <label className="relative mb-3 block px-1 xl:mx-auto xl:w-[39.5rem]">
       <span className="sr-only">Search</span>
-      <span className="pl:pr-3 absolute inset-y-0 left-0 flex items-center pl-2 xl:pl-3">
+      <span className="pl:pr-3 absolute inset-y-0 left-0 flex items-center pl-2 xl:pl-3 xl:mt-5">
         <Image src={searchIcon} alt="searchIcon" className="xl:w-7" />
       </span>
       <input
-        className="mt-[1px] h-[32px] w-full rounded bg-myWhite pl-9 pr-3 font-Poppins text-sm placeholder:font-Poppins placeholder:text-sm placeholder:text-myBlack focus:border-myBlack focus:outline-none focus:ring-1 focus:ring-myBlack xl:pl-12 xl:text-lg placeholder:xl:text-lg"
+        className="mt-[1px] h-[32px] w-full rounded bg-myWhite pl-9 pr-3 font-Poppins text-sm placeholder:font-Poppins placeholder:text-sm placeholder:text-myBlack focus:border-myBlack focus:outline-none focus:ring-1 focus:ring-myBlack xl:pl-12 xl:text-lg placeholder:xl:text-lg xl:mt-5"
         placeholder="Ieškoti prekės, pvz.: obuoliai"
         type="text"
         value={search}

@@ -15,7 +15,7 @@ const Products = ({ products }) => {
   const [search, setSearch] = useState(""); // search state, needs to bet set to empty string after category is changed
 
   return (
-    <div className="h-full w-full px-3">
+    <div className="min-h-[70vh] w-full px-3 xl:px-32">
       <Search
         search={search}
         setSearch={setSearch}
@@ -30,7 +30,7 @@ const Products = ({ products }) => {
         setCurrentPage={setCurrentPage}
         setSearch={setSearch}
       />
-      <div className="space-y-3">
+      <div className="space-y-3 xl:grid xl:grid-cols-3 xl:space-y-0 xl:gap-6">
         {currentProducts.map((product) => (
           <Product
             key={product.id}

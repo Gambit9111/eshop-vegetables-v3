@@ -40,7 +40,7 @@ const Product = ({ id, image, name, quantity, price }) => {
         <h1 className="font-Poppins text-lg leading-snug w-full pt-1">{name}</h1>
         <div className="text-right w-28 flex flex-col items-end">
           <h1 className="text-myBlack/80 text-sm w-12">{quantity}</h1>
-          <h1 className="text-lg pt-1">{(price * amount).toFixed(2)}€</h1>
+          <h1 className="text-lg pt-1 xl:pt-2">{(price * amount).toFixed(2)}€</h1>
           {item ? (
             <p className="text-lg mr-8 font-medium pt-1">{amount} x</p>
           ) : (
@@ -51,13 +51,13 @@ const Product = ({ id, image, name, quantity, price }) => {
             />
           )}
           {item ? (
-            <button className="h-[32px] w-24 rounded border border-myBlack mt-4 bg-myGreen text-myWhite" onClick={() => removeItem(id)}>
+            <button className="h-[32px] w-24 rounded border border-myBlack mt-4 xl:mt-8 bg-myGreen text-myWhite" onClick={() => removeItem(id)}>
               Pašalinti
             </button>
           ) : (
             // if not we display the add to cart button
             <button
-              className="h-[32px] w-24 rounded border border-myBlack mt-4"
+              className="h-[32px] w-24 rounded border border-myBlack mt-4 xl:mt-8"
               onClick={() => addItem({ id, name, quantity, price, amount })}
             >
               Į karutį

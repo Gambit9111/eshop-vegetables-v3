@@ -14,17 +14,16 @@ const Menu = ({ products, setFilteredProducts, setCurrentPage, setSearch }) => {
   };
 
   return (
-    <div className="mb-3 flex gap-3 font-Poppins text-sm xl:justify-center xl:gap-6 xl:px-6 xl:text-xl">
+    <div className="mb-3 flex gap-3 font-Poppins text-sm xl:justify-center xl:gap-6 xl:px-6 xl:text-xl xl:pt-3 xl:pb-6">
       <button
         onClick={() => {
           filterProducts("vaisiai-ir-uogos");
           setActiveButton("vaisiai-ir-uogos");
         }}
-        className={`h-[32px] w-1/3 rounded border border-myBlack xl:w-48 ${
-          activeButton === "vaisiai-ir-uogos"
-            ? "bg-myGreen text-myWhite"
-            : "bg-myWhite text-myBlack"
-        }`}
+        className={`h-[32px] w-1/3 rounded border border-myBlack xl:w-48 ${activeButton === "vaisiai-ir-uogos"
+          ? "bg-myGreen text-myWhite"
+          : "bg-myWhite text-myBlack"
+          }`}
       >
         Vaisiai
       </button>
@@ -34,11 +33,10 @@ const Menu = ({ products, setFilteredProducts, setCurrentPage, setSearch }) => {
           filterProducts("sviezios-darzoves");
           setActiveButton("sviezios-darzoves");
         }}
-        className={`h-[32px] w-1/3 rounded border border-myBlack xl:w-48 ${
-          activeButton === "sviezios-darzoves"
-            ? "bg-myGreen text-myWhite"
-            : "bg-myWhite text-myBlack"
-        }`}
+        className={`h-[32px] w-1/3 rounded border border-myBlack xl:w-48 ${activeButton === "sviezios-darzoves"
+          ? "bg-myGreen text-myWhite"
+          : "bg-myWhite text-myBlack"
+          }`}
       >
         Daržovės
       </button>
@@ -48,11 +46,10 @@ const Menu = ({ products, setFilteredProducts, setCurrentPage, setSearch }) => {
           filterProducts("gerimai");
           setActiveButton("gerimai");
         }}
-        className={`h-[32px] w-1/3 rounded border border-myBlack xl:w-48 ${
-          activeButton === "gerimai"
-            ? "bg-myGreen text-myWhite"
-            : "bg-myWhite text-myBlack"
-        }`}
+        className={`h-[32px] w-1/3 rounded border border-myBlack xl:w-48 ${activeButton === "gerimai"
+          ? "bg-myGreen text-myWhite"
+          : "bg-myWhite text-myBlack"
+          }`}
       >
         Gėrimai
       </button>
