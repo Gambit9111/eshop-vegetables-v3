@@ -32,11 +32,11 @@ const Product = ({ id, image, name, quantity, price }) => {
         alt={name}
         priority
         sizes="33vw"
-        className="w-1/3 pr-2"
+        className="w-1/3 pr-2 object-cover"
         width={160}
         height={200}
       />
-      <div className="flex justify-between w-full">
+      <div className="flex justify-between w-2/3">
         <h1 className="font-Poppins text-lg leading-snug w-full pt-1">{name}</h1>
         <div className="text-right w-28 flex flex-col items-end">
           <h1 className="text-myBlack/80 text-sm w-12">{quantity}</h1>
@@ -70,7 +70,3 @@ const Product = ({ id, image, name, quantity, price }) => {
 };
 
 export default Product;
-
-
-{/* <h1 className="text-lg">{(price * amount).toFixed(2)}€</h1> */ }
-{/* <h1 className="text-myBlack/80 text-sm">{quantity}</h1> */ }
