@@ -1,4 +1,5 @@
 import useCart from "@/zu/cart";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 import AmountControls from "./AmountControls";
@@ -25,7 +26,15 @@ const Product = ({ id, image, name, quantity, price }) => {
   }, [item]);
 
   return (
-    <div className="flex h-32 w-full items-center justify-between gap-3 border-2 border-black bg-white">
+    <div className="flex h-32 w-full items-center justify-between">
+      <Image
+        src={image}
+        priority
+        sizes="33vw"
+        className="w-1/3 pr-2"
+        width={160}
+        height={200}
+      />
       <div className="flex flex-col">
         <h1>{name}</h1>
         <h1>{quantity}</h1>

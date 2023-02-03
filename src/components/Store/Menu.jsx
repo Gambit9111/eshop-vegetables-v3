@@ -14,7 +14,7 @@ const Menu = ({ products, setFilteredProducts, setCurrentPage, setSearch }) => {
   };
 
   return (
-    <div className="flex gap-3 font-Poppins text-sm xl:justify-center xl:gap-6 xl:px-6 xl:text-xl">
+    <div className="mb-3 flex gap-3 font-Poppins text-sm xl:justify-center xl:gap-6 xl:px-6 xl:text-xl">
       <button
         onClick={() => {
           filterProducts("vaisiai-ir-uogos");

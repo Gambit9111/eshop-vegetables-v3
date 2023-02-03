@@ -20,9 +20,9 @@ const Search = ({
   };
 
   return (
-    <label className="relative mb-3 block px-1 pt-3 xl:mx-auto xl:mt-8 xl:w-[39.5rem]">
+    <label className="relative mb-3 block px-1 xl:mx-auto xl:mt-8 xl:w-[39.5rem]">
       <span className="sr-only">Search</span>
-      <span className="pl:pr-3 absolute inset-y-0 left-0 flex items-center pl-2 pt-3 xl:pl-3">
+      <span className="pl:pr-3 absolute inset-y-0 left-0 flex items-center pl-2 xl:pl-3">
         <Image src={searchIcon} alt="searchIcon" className="xl:w-7" />
       </span>
       <input

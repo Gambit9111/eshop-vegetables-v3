@@ -30,17 +30,18 @@ const Products = ({ products }) => {
         setCurrentPage={setCurrentPage}
         setSearch={setSearch}
       />
-
-      {currentProducts.map((product) => (
-        <Product
-          key={product.id}
-          id={product.id}
-          image={product.image}
-          name={product.name}
-          quantity={product.quantity}
-          price={product.price}
-        />
-      ))}
+      <div className="space-y-3">
+        {currentProducts.map((product) => (
+          <Product
+            key={product.id}
+            id={product.id}
+            image={product.image}
+            name={product.name}
+            quantity={product.quantity}
+            price={product.price}
+          />
+        ))}
+      </div>
 
       <Pagination
         currentPage={currentPage}

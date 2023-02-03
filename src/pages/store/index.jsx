@@ -14,7 +14,7 @@ export async function getStaticProps() {
 // we get all of our products from the database at build time and pass them to the Products component
 export default function Page({ products }) {
   return (
-    <main className="mt-20 h-full w-full bg-myGray">
+    <main className="mt-20 h-full w-full bg-myWhite">
       <Products products={products} />
     </main>
   );
