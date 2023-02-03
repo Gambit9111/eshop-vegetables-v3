@@ -5,11 +5,11 @@ import minus from "../../../public/icons/minus.svg";
 
 const AmountControls = ({ handleAmountChange, amount }) => {
   return (
-    <div className="flex gap-2">
+    <div className="flex items-center mt-1 gap-1">
       <button onClick={() => handleAmountChange("minus")}>
         <Image src={minus} alt="minus" />
       </button>
-      <p className="text-xl">{amount}</p>
+      <p className="font-medium text-lg">{amount}</p>
       <button onClick={() => handleAmountChange("plus")}>
         <Image src={plus} alt="plus" />
       </button>

@@ -26,46 +26,51 @@ const Product = ({ id, image, name, quantity, price }) => {
   }, [item]);
 
   return (
-    <div className="flex h-32 w-full items-center justify-between">
+    <div className="flex h-full w-full font-Poppins">
       <Image
         src={image}
+        alt={name}
         priority
         sizes="33vw"
         className="w-1/3 pr-2"
         width={160}
         height={200}
       />
-      <div className="flex flex-col">
-        <h1>{name}</h1>
-        <h1>{quantity}</h1>
-        <h1>{(price * amount).toFixed(2)}€</h1>
+      <div className="flex justify-between w-full">
+        <h1 className="font-Poppins text-lg leading-snug w-full pt-1">{name}</h1>
+        <div className="text-right w-28 flex flex-col items-end">
+          <h1 className="text-myBlack/80 text-sm w-12">{quantity}</h1>
+          <h1 className="text-lg pt-1">{(price * amount).toFixed(2)}€</h1>
+          {item ? (
+            <p className="text-lg mr-8 font-medium pt-1">{amount} x</p>
+          ) : (
+            // if not we display the amount controls
+            <AmountControls
+              handleAmountChange={handleAmountChange}
+              amount={amount}
+            />
+          )}
+          {item ? (
+            <button className="h-[32px] w-24 rounded border border-myBlack mt-4 bg-myGreen text-myWhite" onClick={() => removeItem(id)}>
+              Pašalinti
+            </button>
+          ) : (
+            // if not we display the add to cart button
+            <button
+              className="h-[32px] w-24 rounded border border-myBlack mt-4"
+              onClick={() => addItem({ id, name, quantity, price, amount })}
+            >
+              Į karutį
+            </button>
+          )}
+        </div>
       </div>
-      {/* if this item is already in the cart we display the amount  */}
-      {item ? (
-        <p className="text-xl">{amount}</p>
-      ) : (
-        // if not we display the amount controls
-        <AmountControls
-          handleAmountChange={handleAmountChange}
-          amount={amount}
-        />
-      )}
-      {/* if this item is already in the cart we display the remove button  */}
-      {item ? (
-        <button className="bg-red-600" onClick={() => removeItem(id)}>
-          Remove from cart
-        </button>
-      ) : (
-        // if not we display the add to cart button
-        <button
-          className="bg-myYellow"
-          onClick={() => addItem({ id, name, quantity, price, amount })}
-        >
-          Add to cart
-        </button>
-      )}
     </div>
   );
 };
 
 export default Product;
+
+
+{/* <h1 className="text-lg">{(price * amount).toFixed(2)}€</h1> */ }
+{/* <h1 className="text-myBlack/80 text-sm">{quantity}</h1> */ }
