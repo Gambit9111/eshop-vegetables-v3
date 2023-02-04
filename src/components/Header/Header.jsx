@@ -41,6 +41,7 @@ const Header = ({
         items={items}
         removeItem={removeItem}
         updateItem={updateItem}
+        getTotal={getTotal}
       />
     </header>
   );

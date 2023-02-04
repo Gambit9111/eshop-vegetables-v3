@@ -5,6 +5,8 @@ import Menu from "./Menu";
 import Pagination from "./Pagination";
 import Search from "./Search";
 
+import { AnimatePresence } from "framer-motion";
+
 const Products = ({ products }) => {
   //states
   const [filteredProducts, setFilteredProducts] = useState(
@@ -30,17 +32,20 @@ const Products = ({ products }) => {
         setCurrentPage={setCurrentPage}
         setSearch={setSearch}
       />
-      <div className="space-y-3 xl:grid xl:grid-cols-3 xl:space-y-0 xl:gap-6">
-        {currentProducts.map((product) => (
-          <Product
-            key={product.id}
-            id={product.id}
-            image={product.image}
-            name={product.name}
-            quantity={product.quantity}
-            price={product.price}
-          />
-        ))}
+      <div className="flex flex-col gap-3 xl:grid xl:grid-cols-3 xl:gap-6 xl:space-y-0">
+        <AnimatePresence>
+          {currentProducts.map((product, i) => (
+            <Product
+              i={i}
+              key={product.id}
+              id={product.id}
+              image={product.image}
+              name={product.name}
+              quantity={product.quantity}
+              price={product.price}
+            />
+          ))}
+        </AnimatePresence>
       </div>
 
       <Pagination

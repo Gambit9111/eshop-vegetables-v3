@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import bg from "../../public/pictures/bg.webp";
 
@@ -11,7 +12,6 @@ import urte from "../../public/pictures/urte.webp";
 import anatolijus from "../../public/pictures/anatolijus.webp";
 import windmill from "../../public/icons/windmill.svg";
 import tractor from "../../public/icons/tractor.svg";
-
 import sutaupyk from "../../public/pictures/sutaupyk.webp";
 
 export default function Home() {
@@ -24,15 +24,21 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex h-full flex-col xl:relative">
-        <Image
-          className="mx-auto mt-20 h-[40vh] object-cover xl:h-[90vh] xl:w-full"
-          src={bg}
-          alt={bg}
-          priority
-          quality={100}
-          placeholder="blur"
-          blurDataURL="/pictures/bg.webp"
-        />
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <Image
+            className="mx-auto mt-20 h-[40vh] object-cover xl:h-[90vh] xl:w-full"
+            src={bg}
+            alt={bg}
+            priority
+            quality={100}
+            placeholder="blur"
+            blurDataURL="/pictures/bg.webp"
+          />
+        </motion.span>
         <Section1HomeDelivery />
         <Section2Stories />
         <Section3Discount />

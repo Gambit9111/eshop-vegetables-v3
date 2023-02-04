@@ -19,7 +19,7 @@ const useCart = create((set, get) => ({
     set({ items: [] });
     Cookies.remove('cart');
   },
-  getTotal: () => get().items.reduce((total, item) => total + item.price, 0),
+  getTotal: () => Math.round(get().items.reduce((total, item) => total + item.price * item.amount, 0) * 100) / 100,
   updateItem: (id, updates) => {
     set((state) => {
       const items = state.items.map((item) => {
