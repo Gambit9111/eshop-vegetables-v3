@@ -37,7 +37,7 @@ const CartMenu = ({
 
       {/* cart menu */}
       {cartMenuOpen && (
-        <div className="fixed top-0 left-0 z-10 h-screen w-full overflow-y-scroll bg-myWhite text-myBlack scrollbar-none">
+        <div className="fixed top-0 left-0 z-10 h-screen w-full overflow-y-scroll bg-myWhite pb-24 text-myBlack scrollbar-none">
           <div className="flex h-20 w-full items-center justify-center xl:mb-6 xl:h-24">
             <Image
               src={closeIcon}
@@ -64,7 +64,7 @@ const CartMenu = ({
               />
             ))}
           </div>
-          <CartTotal getTotal={getTotal} />
+          <CartTotal getTotal={getTotal} setCartMenuOpen={setCartMenuOpen} />
         </div>
       )}
     </>

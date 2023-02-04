@@ -1,4 +1,6 @@
-const CartTotal = ({ getTotal }) => {
+import Link from "next/link";
+
+const CartTotal = ({ getTotal, setCartMenuOpen }) => {
   return (
     <>
       {getTotal() === 0 ? (
@@ -12,9 +14,13 @@ const CartTotal = ({ getTotal }) => {
         <div className="fixed bottom-0 flex h-28 w-full justify-between rounded bg-mySkin px-3 pt-3 font-Poppins text-xl font-medium xl:justify-center xl:gap-3">
           <h1>Bendra suma</h1>
           <h1>{getTotal()} €</h1>
-          <button className="absolute top-12 w-48 rounded bg-myGreen py-3 font-Cinzel text-xl font-bold text-myWhite drop-shadow-2xl">
+          <Link
+            href="/checkout"
+            className="absolute top-12 w-48 rounded bg-myGreen py-3 text-center font-Cinzel text-xl font-bold text-myWhite drop-shadow-2xl"
+            onClick={() => setCartMenuOpen(false)}
+          >
             Apmokėjimas
-          </button>
+          </Link>
         </div>
       )}
     </>
